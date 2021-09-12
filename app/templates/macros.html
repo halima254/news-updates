@@ -1,5 +1,12 @@
 {% macro displaySourceCategories(source_list)%}
 {% for source in source_list %}
-<li>{{source.name}}</li>
+
+<div class="col-sm-4 source-card">
+ 
+    <h3>{{source.name}}</h3>
+       <p>{{source.description}}</p>
+       <a href="/source/{{source.id}}" class="btn btn-primary btn-sm">news sources from {{source.name}}</a>
+</div>
+
 {% endfor%}
 {% endmacro%}
