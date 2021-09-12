@@ -1,1 +1,49 @@
-<h1>{{message}}</h1>
+{%import 'macros.html' as macro%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Welcome to News Center</title>
+    {% endif%}
+</head>
+
+<body>
+<!-- General Sources Content  -->
+<h3> General</h3>
+<ul>
+   
+       <li>{{ macro.displaySourceCategories(general)}}</li>
+  
+</ul>
+<h3> Business</h3>
+<ul>
+   
+       <li>{{macro.displaySourceCategories(business)}}</li>
+
+</ul>
+<h3> Technology</h3>
+<ul>
+  
+       <li>{{ macro.displaySourceCategories(technology)}}</li>
+  
+</ul>
+<h3> Health </h3>
+<ul>
+   
+       <li>{{ macro.displaySourceCategories(health)}}</li>
+  
+</ul>
+<h3> Science </h3>
+<ul>
+  
+       <li>{{ macro.displaySourceCategories(science_sources)}}</li>
+   
+</ul>
+
+</body>
+
+</html>
