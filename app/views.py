@@ -15,3 +15,12 @@ def source(source_id):
     '''
     
     return render_template('source.html', id = source_id)
+
+def index():
+    '''
+    view root page that returns the index page and its data
+    '''
+    
+    title = 'Home - Welcome to News center'
+    
+    return render_template('index.html', title = title)
