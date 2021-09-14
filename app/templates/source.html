@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+<!-- Content block -->
+{% block content %}
+<div class="container-fluid" >
+
+    {% for source in article}
+    <div class="row" id="search" style="background-color: aqua;">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 "> 
+           
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 source-details">
+            <h3>{{ source.title }}</h3>
+
+            <p class="name"> {{ source.name}}</p>
+            <p class="title"> <b> {{ source.title}}</b> - <i>{{ source.title}} Title</i> </p>
+
+
+        </div>
+    </div>
+
+</div>
+{% endfor }
+{% endblock %}
