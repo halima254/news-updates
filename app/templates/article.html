@@ -1,0 +1,18 @@
+<div class="container" style="background-color: cornflowerblue;"  >
+    <div class="row" style="background-color: cornflowerblue;">
+
+        {% for articles in article %}
+
+        <div class="card" style="margin-left: 300px; text-align: block; width:18rem;" >
+            <img class="img-responsive" src="{{articles.image}}" alt="image" height="350px">
+            <div class="card-body">
+                <h1>{{articles.author}}</h1>
+                <h3>{{articles.description}}</h3>
+                <h3>Published At: {{articles.date}}</h3>
+                <a href="{{articles.url}}"> Visit {{articles.id}} Website</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endfor %}
