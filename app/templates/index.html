@@ -9,28 +9,28 @@
 {% block content %}
 
 <!-- General News -->
-<div class="container-fluid" style="background-image: url(/app/static/assets/blue.jpg);" >
-<h1 style="color: blue;">General</h1><br>
+<div class="container-fluid"  >
+<h1 style="color: blue;text-align:center">General</h1><br>
 
     {{macro.displaySourceCategories(general)}}
 <hr>
 <!-- Business News -->
-<h1 style="color: blue;">Business</h1>
+<h1 style="color: blue;text-align:center">Business</h1>
 
     {{macro.displaySourceCategories(business)}}
 <hr>
 <!-- tech news -->
-<h1>Technology</h1><br>
+<h1 style="color: blue;text-align:center">Technology</h1><br>
 {{macro.displaySourceCategories(technology)}}
     <hr>
 <!--science  -->
-<h1>Science</h1><br>
+<h1 style="color: blue;text-align:center">Science</h1><br>
 
     {{macro.displaySourceCategories(science)}}
 <hr>
 
 <!-- Health -->
-<h1>Heath</h1><br>
+<h1 style="color: blue;text-align:center">Heath</h1><br>
     {{macro.displaySourceCategories(health)}}
 <hr>
 </div>

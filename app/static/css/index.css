@@ -1,7 +1,7 @@
-body{
-    background-image: url(https://www.backgroundsy.com/file/large/blue-background-design.jpg);
-    color: white;
-}
-#search{
-    background-color: blueviolet;
+
+
+#halima{
+    box-shadow: 10px -1px 5px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px -1px 5px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px -1px 5px -10px rgba(0,0,0,0.75);
 }
