@@ -1,23 +1,36 @@
-from app import app
+# from app import app
 import urllib.request,json
-from app.models.sources import Sources
-from  app.models.articles import Articles
+from .models import Sources
+from .models import Articles
 
-Source = Sources
-Article = Articles
+
+# Source = Sources
+# Article = Articles
 
 #Getting api_key
-api_key = app.config ['SOURCE_API_KEY']
+# api_key = app.config ['SOURCE_API_KEY']
 
 #Getting the news base url
-news_sources_url = app.config["NEWS_SOURCES_API_BASE_URL"]
-article_url = app.config ["ARTICLE_API_BASE_URL"]
+# news_sources_url = app.config["NEWS_SOURCES_API_BASE_URL"]
+# article_url = app.config ["ARTICLE_API_BASE_URL"]
+
+# Getting api key
+api_key = None
+# Getting the news base url
+base_url = None
+article_url = None
+
+def configure_request(app):
+    global api_key,base_url,article_url
+    api_key = app.config['SOURCE_API_KEY']
+    base_url = app.config["NEWS_SOURCES_API_BASE_URL"]
+    article_url = app.config ["ARTICLE_API_BASE_URL"]
 
 def get_sources(category):
     '''
     function that gets the json response to our url request
     '''
-    get_sources_url = news_sources_url.format(category, api_key)
+    get_sources_url = base_url.format(category, api_key)
     
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -47,7 +60,7 @@ def process_source_results(source_list):
         title = source_item.get('title')
         description = source_item.get('description')
         if id:
-         source_object = Source(id,name, author, title, description)
+         source_object = Sources(id,name, author, title, description)
          source_results.append(source_object)
         
     return source_results    
@@ -66,7 +79,7 @@ def get_source(id):
              title = source_details_response.get('title')  
              description = source_details_response.get('description')
              
-             sources_object = Source(name,author,title, description)
+             sources_object = Sources(name,author,title, description)
         
     return source_object
   

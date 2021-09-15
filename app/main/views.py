@@ -1,12 +1,12 @@
-from flask import render_template
-from app import app
-from .request import get_sources,get_source,article_details, get_article
+from flask import render_template, request
+from . import main
+from ..request import get_sources,get_source,article_details, get_article
 
 #views
-@app.route('/')
+@main.route('/')
 def index():
     ''' view root page function that returns the index page and its data'''
-    
+
     general_sources = get_sources('general')
     business_sources = get_sources('business')
     technology_sources = get_sources('technology')
@@ -15,9 +15,9 @@ def index():
     title = 'Welcome to News Centre'
     
     
-    return render_template('index.html', title= title, general= general_sources,business= business_sources,technology =technology_sources,health=health_sources, science = science_sources )
+    return render_template('index.html', title= title, general= general_sources,business= business_sources,technology =technology_sources,health=health_sources, science=science_sources)
 
-@app.route('/source/<int:id>')
+@main.route('/source/<int:id>')
 def source(id):
     '''
     view source page function that returns the source details page and its data
@@ -29,7 +29,7 @@ def source(id):
 
 
 
-@app.route('/articles/<id>')
+@main.route('/articles/<id>')
 def article(id):
     
     article = get_article(id)
